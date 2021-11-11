@@ -7,6 +7,7 @@ export default function Header() {
             <Link to="/index" >INDEX</Link>
             <Link to="/show" >SHOW</Link>
             <Link to="/create" >CREATE</Link>
+            <Link to="/update" >UPDATE</Link>
         </nav>
     )
 }

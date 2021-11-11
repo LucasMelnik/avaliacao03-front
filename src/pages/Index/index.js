@@ -10,8 +10,6 @@ export default function Index() {
         const response = await api.get('/contacts')
 
         setContacts(response.data)
-
-        console.log(contacts)
     }
 
     useEffect(() => {
