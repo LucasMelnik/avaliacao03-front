@@ -8,6 +8,7 @@ export default function Header() {
             <Link to="/show" >SHOW</Link>
             <Link to="/create" >CREATE</Link>
             <Link to="/update" >UPDATE</Link>
+            <Link to="/delete" >DELETE</Link>
         </nav>
     )
 }

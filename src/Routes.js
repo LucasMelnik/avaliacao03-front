@@ -3,6 +3,7 @@ import { Routes as Switch, Route, useLocation } from 'react-router-dom'
 import { useTransition, animated } from 'react-spring'
 
 import Create from './pages/Create';
+import Delete from './pages/Delete';
 import Index from './pages/Index';
 import Show from './pages/Show';
 import Update from './pages/Update';
@@ -23,6 +24,7 @@ export default function Routes() {
                 <Route path="/show" element={<Show/>} />
                 <Route path="/create" element={<Create/>} />
                 <Route path="/update" element={<Update/>} />
+                <Route path="/delete" element={<Delete/>} />
             </Switch>
         </animated.div>
     ))
