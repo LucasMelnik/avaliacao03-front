@@ -4,6 +4,7 @@ import { useTransition, animated } from 'react-spring'
 
 import Create from './pages/Create';
 import Index from './pages/Index';
+import Show from './pages/Show';
 
 export default function Routes() {
     const location = useLocation();
@@ -17,8 +18,9 @@ export default function Routes() {
         <animated.div style={props}>
             <Switch location={item}>
                 <Route path="/" element={<Create/>} />
-                <Route path="/create" element={<Create/>} />
                 <Route path="/index" element={<Index/>} />
+                <Route path="/show" element={<Show/>} />
+                <Route path="/create" element={<Create/>} />
             </Switch>
         </animated.div>
     ))

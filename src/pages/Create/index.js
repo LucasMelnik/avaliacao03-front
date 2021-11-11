@@ -25,8 +25,6 @@ export default function Create() {
 
     function handleSubmit(event) {
         api.post('/contacts', contact)
-
-        event.preventDefault();
     }
 
     return (
