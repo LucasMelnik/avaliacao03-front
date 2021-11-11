@@ -2,7 +2,8 @@ import React from 'react'
 import { Routes as Switch, Route, useLocation } from 'react-router-dom'
 import { useTransition, animated } from 'react-spring'
 
-import Create from './components/Create/Create';
+import Create from './pages/Create';
+import Index from './pages/Index';
 
 export default function Routes() {
     const location = useLocation();
@@ -16,6 +17,8 @@ export default function Routes() {
         <animated.div style={props}>
             <Switch location={item}>
                 <Route path="/" element={<Create/>} />
+                <Route path="/create" element={<Create/>} />
+                <Route path="/index" element={<Index/>} />
             </Switch>
         </animated.div>
     ))

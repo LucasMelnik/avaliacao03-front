@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import api from "../../api";
 
 export default function Create() {
     const [contact, setContact] = useState({})
@@ -22,15 +23,16 @@ export default function Create() {
     }
     
 
-    // function handleSubmit(event) {
-    //     api.post('/users', contact)
-    // }
+    function handleSubmit(event) {
+        api.post('/contacts', contact)
+
+        event.preventDefault();
+    }
 
     return (
         <>
             <div>
-                <form>
-                    
+                <form onSubmit={handleSubmit}>
                     <div>
                         <label>Nome</label>
                         <input id="name" type="text" name="name" placeholder="Lucas Melnik" value={contact.name} onChange={handleChangeName}></input>
@@ -46,10 +48,7 @@ export default function Create() {
                         <input id="phone" type="text" name="phone" placeholder="(DDD) 99999-0000" value={contact.phone} onChange={handleChangePhone}></input>
                     </div>
 
-                    <button name="submitButton" id="cadastroSubmit" type="submit" >Cadastrar-se</button>
-                    <a href="/login">
-                        Já tem cadastro?
-                    </a>
+                    <button name="submitButton" id="cadastroSubmit" type="submit" >Enviar</button>
                 </form>
             </div>
         </>

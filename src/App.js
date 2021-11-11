@@ -4,13 +4,13 @@ import { BrowserRouter } from 'react-router-dom'
 import Header from './components/Header/Header'
 
 import './App.css'
-import Create from './components/Create/Create';
+import Routes from './Routes';
 
 function App() {
   return (
     <BrowserRouter>
-      {/* <Header /> */}
-      <Create/>
+      <Header />
+      <Routes />
     </BrowserRouter>
   );
 }
