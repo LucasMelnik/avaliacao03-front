@@ -4,6 +4,8 @@ import { useEffect } from "react/cjs/react.development";
 import api from '../../api/index'
 import Table from "./Table";
 
+import style from '../Create/index.module.css'
+
 export default function Show() {
 
     const [contactId, setContactId] = useState(null)
@@ -28,18 +30,18 @@ export default function Show() {
     }, [])
 
     return(
-        <>
-            <form onSubmit={handleSubmit}>
-                <div>
+        <div className={style.container}>
+            <form className={style.form} style={ {width: 'auto' }} onSubmit={handleSubmit}>
+                <section className={style.section}>
                     <label>Informe o ID</label>
                     <input id="id" type="text" name="id" placeholder="#01" value={contactId} onChange={handleChangeId}></input>
-                </div>
-                <button type="button" onClick={handleSubmit}>Enviar</button>
-            </form>
+                </section>
+                <button className={style.button} type="button" onClick={handleSubmit}>Enviar</button>
             {
                 isSubmited ? <Table name={contact.name} email={contact.email} phone={contact.phone}/>
                 : null
             }
-        </>
+            </form>
+        </div>
     )
 }

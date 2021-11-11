@@ -1,0 +1,13 @@
+.nav {
+    width: 500px;
+    margin-bottom: 75px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.link {
+    text-decoration: none;
+    color: white;
+    font-family: sans-serif;
+    font-weight: bold;
+}

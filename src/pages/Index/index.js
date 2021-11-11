@@ -2,6 +2,8 @@ import React, { useEffect, useState } from "react";
 
 import api from '../../api/index'
 
+import style from '../Create/index.module.css'
+
 export default function Index() {
 
     const [contacts, setContacts] = useState([])
@@ -17,23 +19,25 @@ export default function Index() {
     }, []);
 
     return(
-        <>
-            <table>
-                <tr>
-                    <th>Id</th>
-                    <th>Name</th>
-                    <th>E-mail</th>
-                    <th>Phone</th>
-                </tr>
-                {contacts.map((contact) => (
+        <div className={style.container}>
+            <div className={style.form} style={ {width: 'auto' }}>
+                <table >
                     <tr>
-                        <td>{contact.id}</td>
-                        <td>{contact.name}</td>
-                        <td>{contact.email}</td>
-                        <td>{contact.phone}</td>
+                        <th style={{ fontFamily: "sans-serif" }}>Id</th>
+                        <th style={{ fontFamily: "sans-serif" }}>Name</th>
+                        <th style={{ fontFamily: "sans-serif" }}>E-mail</th>
+                        <th style={{ fontFamily: "sans-serif" }}>Phone</th>
                     </tr>
-                ))}
-            </table>
-        </>
+                    {contacts.map((contact) => (
+                        <tr >
+                            <td style={{ borderBottom: "solid", borderWidth: "1px" }}>{contact.id}</td>
+                            <td style={{ borderBottom: "solid", borderWidth: "1px" }}>{contact.name}</td>
+                            <td style={{ borderBottom: "solid", borderWidth: "1px" }}>{contact.email}</td>
+                            <td style={{ borderBottom: "solid", borderWidth: "1px" }}>{contact.phone}</td>
+                        </tr>
+                    ))}
+                </table>
+            </div>
+        </div>
     )
 }
