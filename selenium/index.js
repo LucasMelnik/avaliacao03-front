@@ -7,6 +7,10 @@ async function Test() {
     await driver.findElement(By.css("#name")).sendKeys("Lucas Melnik");
     await driver.findElement(By.css("#mail")).sendKeys("lucas@mail.com");
     await driver.findElement(By.css("#phone")).sendKeys("(45) 99999-0000");
+    await driver.findElement(By.css("#cadastroSubmit")).click();
+    
+    await driver.get("http://localhost:3000/index");
+
 }
 
 Test();
